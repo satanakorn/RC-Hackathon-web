@@ -1,0 +1,40 @@
+.Header {
+    padding-top: 100px;
+}
+
+.form-outline.error input{
+    border-color: red;
+}
+
+.form-outline.success input {
+    border-color: green;
+}
+
+.form-outline small{
+    color: red;
+    visibility: hidden;
+}
+
+.form-outline.error small {
+    visibility: visible;
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:10;
+    margin:0;
+  }
+
+#myModal p {
+    margin:0;
+}
+
+.qrcode-container {
+    background-image: url('https://cdn.pixabay.com/photo/2019/07/22/20/36/mountains-4356017_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

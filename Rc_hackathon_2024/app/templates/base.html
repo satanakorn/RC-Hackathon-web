@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="asset/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css'%}">
+    <link rel="stylesheet" href="{% static 'list.css' %}">
+    <link rel="stylesheet" href="{% static 'ide.css' %}">
+
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+    
+    <div class="wrapper">
+      
+        <aside id="sidebar" class="collapsed">
+            <div class="h-100 sidebar-container">
+                <div class="sidebar-logo">
+                    <img class="py-3" src="../static/undraw_programming.svg">
+                    <a href="/">RC Hackathon 2024</a>
+                </div>
+
+                <ul class="sidebar-nav pt-3">
+                    <li class="sidebar-item">
+                        <a href="/" class="sidebar-link">
+                            <i class="fa-solid fa-house pe-3"></i>หน้าหลัก
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="/list" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-3"></i>โจทย์ทั้งหมด
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="/about" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-3"></i>เกี่ยวกับเรา
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+ 
+        <div class="main">
+            <nav class="navbar navbar-expand px-4 d-flex justify-content-between">
+               
+                <button class="btn" id="sidebar-btn" type="button" data-bs-theme="dark" >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="profile" id="profile"> 
+                    <div class="user-icon text-white" id="user-icon">
+                        <i class="fa-solid fa-user"></i>
+                        Welcome back, <span class="username" id="username"></span>
+                    </div>
+                    <div class="login-button" id="login-icon">
+                                              
+                        <button class="btn px-4" id="login-button">
+                            <a href="/login">เข้าสู่ระบบ</a>
+                        </button>
+
+                    </div>
+                </div>
+            </nav>
+    
+
+    {% block content %}
+    {% endblock %}
+     
+
+</div>
+   
+  
+</body>
+<script src="{% static 'script.js' %}"></script>
+<script type="text/javascript" src="{% static 'particles.js' %}"></script>
+<script type="text/javascript" src="{% static 'app.js' %}"></script>
+<script type="text/javascript" src="{% static 'myChart.js' %}"></script>
+<script src="{% static 'list.js' %}"></script>
+<script src="{% static 'login.js' %}"></script>
+<script src="{% static 'ide.js' %}"></script>
+</html>

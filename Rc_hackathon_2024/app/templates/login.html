@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Rc hackathon</title>
+{% endblock %}
+
+{% load static %}
+
+{% block content %} 
+<div class="wrapper">
+
+    <div id="myModal" class="alert alert-danger text-center">
+      <h5>Login Successful</h5>
+      <p>We will take you to the main page.</p>
+    </div>
+
+    <section class="vh-70">
+      <div class="container-fluid h-custom">
+          <div class="Header text-center">
+              <h1 class="display-5">Welcome to RC Hackathon 2023</h1>
+          </div>
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              class="img-fluid" alt="hero-image">
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+            <form id="form">
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">อีเมลของมหาวิทยาลัย</label>
+                <input type="email" id="email-form" class="form-control form-control-lg"
+                  placeholder="เช่น apichaya.phan@mail.kmutt.ac.th" />
+                <small></small>
+              </div>
+    
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4">รหัสประจำตัวนักศึกษา</label>
+                <input type="password" id="password-form" class="form-control form-control-lg"
+                  placeholder="เช่น 65070506001" />
+                <small></small>
+                
+              </div>
+    
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- Checkbox -->
+                <div class="form-check mb-0">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="RememberMe" />
+                  <label class="form-check-label" for="form2Example3">
+                    จดจำฉัน
+                  </label>
+                </div>
+              </div>
+    
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="submit" id="login-button" class="btn btn-lg text-white"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              </div>
+    
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<script src="{% static 'login.js' %}"></script>
+
+{% endblock %}

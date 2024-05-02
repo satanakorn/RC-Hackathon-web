@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Rc hackathon</title>
+{% endblock %}
+
+{% block content %}
+<main class="content">
+  <div class="text-center text-white pt-5">
+      <h1>โจทย์ทั้งหมด</h1>
+  </div>
+
+  <div class="easy-container container pt-4">
+      <div class="d-flex align-items-center text-white">
+          <h1>Easy</h1>
+          &nbsp;&nbsp; <i class="fa-solid fa-star text-warning"></i>
+      </div>
+
+      {% for problem in easy_problems %}
+      <div class="easy-item mt-4">
+        <a href="{% url 'quiz' problem.id %}"> 
+          <div class="card p-2">
+              <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                      <h4 class="card-title pt-1">{{ problem.title }}</h5>
+                      <button class="btn btn-danger button-status">Status : {{ problem.status }}</button>
+                      
+                  </div>
+                  <p class="card-text mt-3">{{ problem.description }}</p>
+              </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+      
+  </div>
+
+  <div class="medium-container container pt-4">
+      <div class="d-flex align-items-center text-white">
+          <h1>Medium</h1>
+          &nbsp;&nbsp; <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i>
+      </div>
+
+      {% for problem in medium_problems %}
+      <div class="medium-item mt-4">
+        <a href="{% url 'quiz' problem.id %}"> 
+          <div class="card p-2">
+              <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                      <h4 class="card-title pt-1">{{ problem.title }}</h5>
+                      <button class="btn btn-danger button-status">Status : {{ problem.status }}</button>
+                  </div>
+                  <p class="card-text mt-3">{{ problem.description }}</p>
+              </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+  </div>
+
+  <div class="hard-container container pt-4">
+      <div class="d-flex align-items-center text-white">
+          <h1>Hard</h1>
+          &nbsp;&nbsp; <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i>
+      </div>
+
+      {% for problem in hard_problems %}
+      <div class="hard-item mt-4">
+        <a href="{% url 'quiz' problem.id %}"> 
+          <div class="card p-2">
+              <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                      <h4 class="card-title pt-1">{{ problem.title }}</h5>
+                      <button class="btn btn-danger button-status">Status : {{ problem.status }}</button>
+                  </div>
+                  <p class="card-text mt-3">{{ problem.description }}</p>
+              </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+  </div>
+  
+  <div class="send-container container d-flex flex-column pt-5 justify-content-center align-items-center">
+    <button class="btn btn-primary text-center m-3 p-3 fs-5" id="send-button">
+      <a href="/qrcode">ยืนยันการส่งข้อสอบทั้งหมด</a></button>
+    <h5 class="text-center text-white p-5">หมายเหตุ : หากยืนยันที่จะส่งข้อสอบไปแล้วจะไม่สามารถย้อนกลับได้และหยุดจับเวลา</h5>
+  </div>
+
+
+    <footer>
+        <div class="container text-white text-center py-3"><p>&copy;Copyright RC Hackathon 2023</p></div>
+    </footer>   
+</main>
+{% endblock %}

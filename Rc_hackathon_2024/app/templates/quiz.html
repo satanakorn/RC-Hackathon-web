@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Rc hackathon</title>
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<form id="uploadForm" action="{% url 'upload_python_file' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    
+    <div class="container-fluid nav-container">
+        <div class="d-flex align-items-center justify-content-between h-100 px-3">
+            <button class="btn btn-danger back-button">
+                <a href="/list">Back</a>
+            </button>
+            <label for="fileInput" class="btn btn-warning">Choose File</label>
+            <input id="fileInput" type="file" name="file" style="display: none;" onchange="handleFileSelection(this)">
+            <button id="uploadButton" class="btn btn-warning" type="submit" value="Upload" style="display: none;">Upload File</button>  
+        </div>
+    </div>
+</form>
+
+    <div class="container-fluid ide-container" style="height:100%; 
+    overflow-y: auto;">
+        <div class="m-3 d-flex" >
+
+            <div class="d-flex flex-column ps-4 w-100">
+                
+                <div class="question p-3 text-white">
+                    <h1 class="hero-text text-center">{{ title }}</h1>
+                    <p>
+                        {{ description }}
+                    </p>
+                    <h3 class="text-primary">Input นำเข้า</h3>
+                    <p>{{ input }}</p>
+
+                    <h3 class="text-warning">Output ส่งออก</h3>
+                    <p>{{ output }}</p>
+
+                    <h3>ตัวอย่าง</h3>
+                    
+                    
+                    <div class="testcase">
+                        <div class="input-output d-flex">
+                            <div class="input-textarea me-3">
+                                <h3 for="codearea">Input</h3>
+                                <box class="form-control" id="codearea" name="codearea" rows="5" style="white-space: pre-line;" disabled>{{ input_ex|linebreaksbr|safe }}</box>
+                                
+                            </div>
+                            
+                            <div class="output-textarea">
+                                <h3 for="Output">Output</h3>
+                                <box   class="form-control" id="Output" name="output" rows="5" style="white-space: pre-line;" disabled>{{ output_ex|linebreaksbr|safe }}</box>
+
+                            </div>
+                            
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="{% static 'ide.js' %}"></script>
+
+<script>
+    function handleFileSelection(input) {
+        const file = input.files[0];
+        if (file) {
+            document.getElementById('uploadButton').style.display = 'block';
+            alert('Choose file success.');
+        }
+    }
+</script>
+
+    
+{% endblock %}

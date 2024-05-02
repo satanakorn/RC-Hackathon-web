@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Rc hackathon</title>
+{% endblock %}
+
+{% block content %}
+        <main class="content">
+          <section class="vh-100 qrcode-container">
+            <div class="container-fluid h-custom">
+                <div class="Header text-center text-white">
+                    <h1 class="display-5">ขอบคุณที่เข้าร่วมการแข่งขันกับเรา</h1>
+                    <p class="h4 pt-3">สแกนเพื่อประเมินกิจกรรมและรับชั่วโมงกิจกรรม</p>
+                    <img src="../static/qr_code.png" class="w-25">
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                <a href="/"><button class="btn btn-primary">กลับสู่หน้าหลัก</button></a>
+            </div>
+              </div>
+          </section>
+    
+        </main>   
+{% endblock %}

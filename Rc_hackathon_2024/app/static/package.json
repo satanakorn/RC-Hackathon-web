@@ -1,0 +1,18 @@
+{
+  "name": "rc-hackathon",
+  "version": "1.0.0",
+  "description": "RC Hackathon 2023 website for Python coding competition in KMUTT RC.",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon api.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "compilex": "^0.7.4",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2"
+  }
+}

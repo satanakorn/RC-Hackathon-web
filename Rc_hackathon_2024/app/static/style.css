@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap');
+
+:root {
+    --background-color: #2B7A77;
+    --secondary-background-color: rgb(58,175,169);
+    --dark-background-color: #17242A;
+    --text-color: #DEF2F1;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin:0; 
+    padding:0;
+    font-family: 'Kanit', sans-serif;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Navbar section */
+.navbar {
+    background-color: var(--background-color);
+    height: 70px;
+}
+
+#login-button {
+    background-color: var(--dark-background-color);
+}
+
+#login-button a {
+    text-decoration: none;
+    color: white;
+}
+
+#login-button:hover {
+    background-color: var(--secondary-background-color);
+    transition: background-color 0.1s ease-in;
+}
+
+#user-icon {
+    font-size: 20px;
+}
+
+/* Sidebar collapsed */
+
+.wrapper {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    max-width: 264px;
+    min-width: 264px;
+    transition: all 0.35s ease-in-out;
+}
+
+
+
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+.sidebar-logo {
+    padding: 1.15rem 1.5rem;
+}
+
+.sidebar-logo img {
+    width: 200px;
+}
+
+.sidebar-logo a {
+    color: #e9ecef;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.sidebar-nav {
+    padding:0;
+}
+
+.sidebar-header {
+    color: #e9ecef;
+    font-size: .75rem;
+    padding: 1.5rem 1.5rem .375rem;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: white;
+    position: relative;
+    display: block;
+}
+
+.sidebar-link a i {
+    font-size: 50px;
+}
+
+.sidebar-item:hover {
+    background-color: var(--dark-background-color);
+    transition: background-color 0.1s ease-in-out;
+}
+
+/*Sidebar Container*/
+.sidebar-container {
+    background: var(--background-color);
+}
+
+/* Content */
+
+#particles-js{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+}
+
+  
+
+.image-show {
+    background-image: url('https://cdn.pixabay.com/photo/2019/07/22/20/36/mountains-4356017_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
+    height: 100vh;
+}
+
+.head-container {
+    padding-top: 100px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+.head-container h3 {
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+    font-size: 72px;
+    background: -webkit-linear-gradient(var(--secondary-background-color), var(--text-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.head-container p {
+    text-shadow: 1px 1px black;
+    color: var(--text-color);
+    line-height: 45px;
+}
+
+.hero-image {
+    z-index: 100;
+    padding-top: 100px;
+    width: 85%;
+}
+
+.head-container button {
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 150px;
+}
+
+/* Statics */
+
+.statics {
+    background-color: var(--background-color);
+}
+.static-number {
+    padding-top: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.static-box span {
+    font-size: 2rem;
+}
+
+/* Info container */
+
+.info {
+    background-color: var(--dark-background-color);
+    height: 70vh;
+}
+
+.info-image {
+    width: 35%;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.info-container {
+    padding: 100px;
+}
+
+.info-body {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+.copyright-container {
+    background-color: var(--background-color);
+}
+
+#join-button {
+    width: 25%;
+    padding: 15px;
+    font-size: 24px;
+}

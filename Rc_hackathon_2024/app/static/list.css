@@ -1,0 +1,33 @@
+:root {
+    --background-color: #2B7A77;
+    --secondary-background-color: rgb(58,175,169);
+    --dark-background-color: #17242A;
+    --text-color: #DEF2F1;
+}
+
+.content {
+    background-color: var(--dark-background-color);
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:10;
+    margin:0;
+  }
+
+#myModal p {
+    margin:0;
+}
+
+#send-button {
+    width: 350px;
+}
+
+#send-button a{
+    text-decoration: none;
+    color: white;
+}
